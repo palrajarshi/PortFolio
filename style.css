@@ -284,10 +284,10 @@ body {
   width: 80%;
   display: grid;
   grid-template-areas:
-    "skiBox skiBox eduBox eduBox"
-    "skiBox skiBox eduBox eduBox"
-    "skiBox skiBox langBox langBox"
-    "skiBox skiBox langBox langBox";
+    "skiBox eduBox langBox"
+    "skiBox eduBox langBox"
+    "skiBox eduBox langBox"
+    "skiBox eduBox langBox";
 }
 #educationBox {
   grid-area: eduBox;
@@ -306,11 +306,11 @@ body {
 
 /* 5.1 Section: Skills Paras(Info) */
 .skill-valItems {
-  border: 0.15rem solid;
+  /* border: 0.15rem solid; */
+  /* border-radius: 1rem; */
   font-size: 1rem;
   width: 95%;
   margin-bottom: 0.6rem;
-  border-radius: 1rem;
   padding: 0.5rem;
 }
 .para-primary {
