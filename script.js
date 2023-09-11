@@ -122,7 +122,7 @@ window.addEventListener("scroll", ScrollAni);
 window.addEventListener("DOMContentLoaded", () => {
   typeWriter();
   preloadImages();
-  intervalID = setInterval(bgChanger, 1500);
+  intervalID = setInterval(bgChanger, 3000);
   setTimeout(() => {
     clearInterval(intervalID);
   }, timer);
