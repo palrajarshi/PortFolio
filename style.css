@@ -48,6 +48,9 @@ body {
   right: 5%;
   cursor: pointer;
 }
+.btn-cancel:hover{
+  color: #b353f9;
+}
 
 /* 3.2 Navbar ul(nav- items) */
 .nav-title {
@@ -274,7 +277,7 @@ body {
   justify-content: center;
   transition: opacity 0.6s ease-in-out;
   /* background: linear-gradient(to left, #87ceeb, #dfeee5); */
-  background: linear-gradient(to left, #87ceeb, #b27bfc);
+  background: linear-gradient(to left, #b27bfc, #87ceeb);
 }
 .skillBox {
   height: 90%;
