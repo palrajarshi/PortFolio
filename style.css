@@ -181,10 +181,12 @@ body {
 }
 .aboutImgBox {
   /* border: 2px solid; */
+  opacity: 0;
   height: 100%;
   width: 40%;
   border-radius: 1rem;
   overflow: hidden;
+  transition: all 0.6s ease;
 }
 /* 4.1 Section - About Info Box */
 .aboutInfoBox {

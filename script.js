@@ -4,6 +4,7 @@ const navbar = document.getElementById("navbar");
 const cancelbtn = document.querySelector(".btn-cancel");
 const aboutBox = document.querySelector(".AboutBox");
 const aboutInfoBox = document.querySelector(".aboutInfoBox");
+const aboutImageBox = document.querySelector(".aboutImgBox");
 const navitems = document.querySelector(".nav-items");
 const typeWriteTitle = document.querySelector(".typeWriteTitle");
 const skillValItems = document.querySelectorAll(".skill-valItems");
@@ -98,19 +99,20 @@ const ScrollAni = () => {
 
   if (offsetTop >= -900 && offsetTop < -300) {
     console.log("View Port reached");
+    aboutImageBox.style.opacity = 1;
     aboutBox.classList.add("animateItems");
-    navbar.style.background = '#44093aed';
+
+    navbar.style.background = "#44093aed";
     console.log("Color Changed");
     setTimeout(() => {
       aboutInfoBox.classList.add("animateItems");
       aboutInfoBox.style.opacity = 1;
     }, 605);
-  }
-  else{
-    navbar.style.background = '#44093a80';
+  } else {
+    navbar.style.background = "#44093a80";
   }
   if (offsetTop >= -1499 && offsetTop < -899) {
-    navbar.style.background = '#093244e3';
+    navbar.style.background = "#093244e3";
     Skills.style.opacity = 1;
     skillValItems.forEach((element, index) => {
       const delay = index * 50;
