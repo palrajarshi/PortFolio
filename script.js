@@ -66,7 +66,7 @@ const preloadImages = () => {
   }
 };
 
-let timer = arr.length * 1500;
+let timer = arr.length * 3000;
 const bgChanger = () => {
   Home.style.setProperty("--changeBg", `url(${arr[arrInd]})`);
   arrInd = (arrInd + 1) % arr.length;
@@ -96,15 +96,21 @@ const ScrollAni = () => {
   // console.log("Offset bottom", offsetBottom);
   // console.log("Offset left", offsetLeft);
 
-  if (offsetTop >= -300 && offsetTop < -50) {
+  if (offsetTop >= -900 && offsetTop < -300) {
     console.log("View Port reached");
     aboutBox.classList.add("animateItems");
+    navbar.style.background = '#44093aed';
+    console.log("Color Changed");
     setTimeout(() => {
       aboutInfoBox.classList.add("animateItems");
       aboutInfoBox.style.opacity = 1;
     }, 605);
   }
-  if (offsetTop >= -1099 && offsetTop < -899) {
+  else{
+    navbar.style.background = '#44093a80';
+  }
+  if (offsetTop >= -1499 && offsetTop < -899) {
+    navbar.style.background = '#093244e3';
     Skills.style.opacity = 1;
     skillValItems.forEach((element, index) => {
       const delay = index * 50;
