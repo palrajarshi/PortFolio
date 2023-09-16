@@ -54,10 +54,10 @@ const typeWriter = () => {
 const Home = document.getElementById("Home");
 let arrInd = 0;
 const arr = [
-  "images/bg0.jpg",
-  "images/bg1.jpg",
-  "images/bg2.jpg",
-  "images/bg3.jpg",
+  "images/bgcheck.jpg",
+  "images/bgcheck1.jpg",
+  "images/bgcheck2.jpg",
+  "images/bgcheck3.jpg",
 ];
 
 // 6. Preloading Images for a smoother effect
@@ -102,6 +102,7 @@ const ScrollAni = () => {
   // console.log("Offset bottom", offsetBottom);
   // console.log("Offset left", offsetLeft);
 
+  // 7.3 Adding Effects to About section
   if (offsetTop >= -900 && offsetTop < -300) {
     aboutImageBox.style.opacity = 1;
     aboutBox.classList.add("animateItems");
@@ -115,8 +116,8 @@ const ScrollAni = () => {
     navbar.style.background = "#13131380";
   }
 
-  // 7.3 Education Viewport reached
-  if (offsetTop >= -1550 && offsetTop < -950) {
+  // 7.4 Education Viewport reached
+  if (offsetTop >= -1450 && offsetTop < -750) {
     Skills.style.opacity = 1;
     try {
       skillLists[1].classList.remove("AddNavEffect");
@@ -130,8 +131,8 @@ const ScrollAni = () => {
       addEffectWithDelay(element, "animateYitems", 80);
     });
   }
-  // 7.4 Experience Viewport reached
-  if (offsetTop >= -2100 && offsetTop < -1700) {
+  // 7.5 Experience Viewport reached
+  if (offsetTop >= -2100 && offsetTop < -1500) {
     try {
       skillLists[0].classList.remove("AddNavEffect");
       skillLists[2].classList.remove("AddNavEffect");
@@ -144,8 +145,8 @@ const ScrollAni = () => {
       addEffectWithDelay(element, "animateYitems", 80);
     });
   }
-  // 7.5 Languages Viewport reached
-  if (offsetTop >= -2700 && offsetTop < -2300) {
+  // 7.6 Languages Viewport reached
+  if (offsetTop >= -2700 && offsetTop < -2200) {
     try {
       skillLists[0].classList.remove("AddNavEffect");
       skillLists[1].classList.remove("AddNavEffect");
