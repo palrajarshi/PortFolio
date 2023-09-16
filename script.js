@@ -90,14 +90,6 @@ const eduval = document.querySelectorAll("#edubox .skill-value");
 const expval = document.querySelectorAll("#expbox .skill-value");
 const langval = document.querySelectorAll("#langbox .skill-value");
 
-// 7.3 Check whether classlist is present
-const checkClassList = () => {
-  skillLists.forEach((element) => {
-    if (element.classList.contains("AddNavEffect")) {
-      element.classList.remove("AddNavEffect");
-    }
-  });
-};
 const ScrollAni = () => {
   const offSet = document.body.getBoundingClientRect();
 
@@ -105,18 +97,16 @@ const ScrollAni = () => {
   const offsetRight = Number.parseInt(offSet.right);
   const offsetBottom = Number.parseInt(offSet.bottom);
   const offsetLeft = Number.parseInt(offSet.left);
-  // console.log("Offset top", offsetTop);
+  console.log("Offset top", offsetTop);
   // console.log("Offset right", offsetRight);
   // console.log("Offset bottom", offsetBottom);
   // console.log("Offset left", offsetLeft);
 
   if (offsetTop >= -900 && offsetTop < -300) {
-    console.log("View Port reached");
     aboutImageBox.style.opacity = 1;
     aboutBox.classList.add("animateItems");
 
     navbar.style.background = "#44093aed";
-    console.log("Color Changed");
     setTimeout(() => {
       aboutInfoBox.classList.add("animateItems");
       aboutInfoBox.style.opacity = 1;
@@ -126,19 +116,29 @@ const ScrollAni = () => {
   }
 
   // 7.3 Education Viewport reached
-  if (offsetTop >= -1350 && offsetTop < -950) {
+  if (offsetTop >= -1550 && offsetTop < -950) {
     Skills.style.opacity = 1;
-    checkClassList();
-    addEffectWithDelay(skillLists[0], "AddNavEffect", 80);
+    try {
+      skillLists[1].classList.remove("AddNavEffect");
+      skillLists[2].classList.remove("AddNavEffect");
+    } catch (err) {
+      console.log("Class List not present");
+    }
+    addEffectWithDelay(skillLists[0], "AddNavEffect", 100);
     edubox.style.opacity = 1;
     eduval.forEach((element) => {
       addEffectWithDelay(element, "animateYitems", 80);
     });
   }
   // 7.4 Experience Viewport reached
-  if (offsetTop >= -1990 && offsetTop < -1610) {
-    checkClassList();
-    addEffectWithDelay(skillLists[1], "AddNavEffect", 80);
+  if (offsetTop >= -2100 && offsetTop < -1700) {
+    try {
+      skillLists[0].classList.remove("AddNavEffect");
+      skillLists[2].classList.remove("AddNavEffect");
+    } catch (err) {
+      console.log("ClassList not present");
+    }
+    addEffectWithDelay(skillLists[1], "AddNavEffect", 100);
     expbox.style.opacity = 1;
     expval.forEach((element) => {
       addEffectWithDelay(element, "animateYitems", 80);
@@ -146,8 +146,13 @@ const ScrollAni = () => {
   }
   // 7.5 Languages Viewport reached
   if (offsetTop >= -2700 && offsetTop < -2300) {
-    checkClassList();
-    addEffectWithDelay(skillLists[2], "AddNavEffect", 80);
+    try {
+      skillLists[0].classList.remove("AddNavEffect");
+      skillLists[1].classList.remove("AddNavEffect");
+    } catch (err) {
+      console.log("ClassList not present");
+    }
+    addEffectWithDelay(skillLists[2], "AddNavEffect", 100);
     langbox.style.opacity = 1;
     langval.forEach((element) => {
       addEffectWithDelay(element, "animateYitems", 80);
