@@ -1,6 +1,6 @@
 /* 1. Import Font */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fjalla+One&family=Kanit:wght@300&family=Lato&family=Roboto+Slab&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Merriweather:wght@300&family=Mukta:wght@500&display=swap");
 /* 2. Initialisations */
 * {
   font-family: "Lato", sans-serif;
@@ -12,12 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  height: 150rem;
+  height: 200rem;
 }
 
 /* 3.Section - Navbar */
 #navbar {
-  background: #44093a80;
+  background: #13131380;
   z-index: 1;
   position: fixed;
   right: 0;
@@ -33,7 +33,7 @@ body {
   text-align: center;
   border-radius: 0.6rem;
   font-size: 2rem;
-  background: #963d636b;
+  background: #4e535f9e;
   color: white;
   position: fixed;
   top: 2%;
@@ -48,7 +48,7 @@ body {
   right: 5%;
   cursor: pointer;
 }
-.btn-cancel:hover{
+.btn-cancel:hover {
   color: #b353f9;
 }
 
@@ -127,7 +127,7 @@ body {
   background-position: center;
   background-size: cover;
   height: 100vh;
-  z-index: -1;
+  z-index: -3;
   transition: background 0.6s ease;
   opacity: 95%;
 }
@@ -171,7 +171,7 @@ body {
   align-items: center;
   justify-content: center;
   /* background: linear-gradient(to bottom, #87CEEB, #ffffff); */
-  background: linear-gradient(135deg, #7d14ee, #d58cff, #a7d7f9);
+  /* background: linear-gradient(135deg, #7d14ee, #d58cff, #a7d7f9); */
 }
 .AboutBox {
   display: flex;
@@ -202,11 +202,11 @@ body {
   display: flex;
   align-items: center;
   height: 15%;
-  color: white;
+  color: blue;
 }
 .para-info {
-  font-size: 1.3rem;
-  color: rgb(93 39 39);
+  font-size: 1.1rem;
+  color: #787278;
   height: 15%;
   display: flex;
   align-items: center;
@@ -214,7 +214,7 @@ body {
 /* 4.2 Section - Spanbox (label and val) Box  */
 .aboutSpanBox {
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   height: 55%;
 }
 .span-label {
@@ -229,7 +229,7 @@ body {
   flex-direction: column;
   /* border: 2px solid; */
   width: 75%;
-  color: rgb(255, 255, 255);
+  color: #948d8d;
 }
 
 .label-items,
@@ -272,62 +272,133 @@ body {
 
 /* 5. Section - Skills */
 #Skills {
-  opacity: 0;
-  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.6s ease-in-out;
-  /* background: linear-gradient(to left, #87ceeb, #dfeee5); */
-  background: linear-gradient(to left, #b27bfc, #87ceeb);
-}
-.skillBox {
-  height: 90%;
-  width: 80%;
-  display: grid;
-  grid-template-areas:
-    "skiBox eduBox langBox"
-    "skiBox eduBox langBox"
-    "skiBox eduBox langBox"
-    "skiBox eduBox langBox";
-}
-#educationBox {
-  grid-area: eduBox;
-}
-#skiBox {
-  grid-area: skiBox;
-}
-#languageBox {
-  grid-area: langBox;
-}
-.skill-title {
-  margin-bottom: 0.6rem;
-  font-size: 2rem;
-  font-family: "DM Serif Display", serif;
+  opacity: 0;
+  height: 125rem;
+  transition: 0.6s ease;
 }
 
-/* 5.1 Section: Skills Paras(Info) */
-.skill-valItems {
-  /* border: 0.15rem solid; */
-  /* border-radius: 1rem; */
-  font-size: 1rem;
-  width: 95%;
-  margin-bottom: 0.6rem;
+/* 5.1 Skill Navbar */
+#skillbar {
+  position: sticky;
+  left: 0;
+  top: 20%;
+  width: 20%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#skill-items {
+  list-style: none;
+}
+#skill-items li {
   padding: 0.5rem;
+  margin: 0.1rem;
+}
+#skill-items li a {
+  font-size: 1.3rem;
+  font-family: 'Kanit', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Dynamically add effect */
+.AddNavEffect {
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 0.4rem;
+  transform: translateX(20%);
+  transition: 0.6s ease;
+}
+.skillsbox {
+  width: 75%;
+  height: 100%;
+  margin-left: 1rem;
+}
+
+.skill-title {
+  margin: 1rem;
+  font-size: 2.2rem;
+  color: blue;
+  font-family: "Mukta", sans-serif;
+  margin: 3rem 1rem 1rem 1rem;
+}
+.skill-value {
+  display: flex;
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+.uil-analytics {
+  font-size: 2.1rem;
+  background-color: blue;
+  border-radius: 30%;
+  color: white;
+  padding: 0.2rem;
+}
+.skill-btns {
+  width: 5%;
+  margin: 0.5rem 0 0 0.6rem;
+}
+.skill-para {
+  width: 75%;
+}
+
+#edubox {
+  transform: translateY(0%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+#expbox {
+  transform: translateY(0%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+#langbox {
+  transform: translateY(0%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+/* 5.2 Section: Skills, Para  */
+.para-duration {
+  color: blue;
+}
+
+/* Dynamic Animations */
+.animateYitems {
+  animation: aniYSlide 0.6s ease-in-out;
+}
+@keyframes aniYSlide {
+  0% {
+    transform: translateY(80%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 .para-primary {
-  font-family: "DM Serif Display", serif;
-  padding-bottom: 0.5rem;
+  font-family: "Merriweather", serif;
+  font-size: 1.4rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-weight: bold;
+}
+.para-duration {
+  font-family: "Merriweather", serif;
+  padding: 0.2rem;
+  margin: 0.2rem;
 }
 .para-secondary {
-  font-family: "Fjalla One", sans-serif;
-  border: 0.2rem solid;
-  display: inline-block;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  font-size: 1.3rem;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-size: 1.1rem;
 }
 .para-tertiary {
-  font-family: "DM Serif Display", serif;
-  padding-top: 0.5rem;
+  font-family: "Merriweather", serif;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-size: 1rem;
+  color: #888080;
 }

@@ -7,12 +7,11 @@ const aboutInfoBox = document.querySelector(".aboutInfoBox");
 const aboutImageBox = document.querySelector(".aboutImgBox");
 const navitems = document.querySelector(".nav-items");
 const typeWriteTitle = document.querySelector(".typeWriteTitle");
+const skillValItems = document.querySelectorAll(".skill-valItems");
+const skillTitle = document.querySelectorAll(".skill-title");
 const typeWritePara = document.querySelector(".typeWritePara");
 const About = document.getElementById("About");
 const Skills = document.getElementById("Skills");
-const edubox = document.getElementById("edubox");
-const expbox = document.getElementById("expbox");
-const langbox = document.getElementById("langbox");
 
 let intervalID;
 // 2. Menubar logic
@@ -85,19 +84,7 @@ const addEffectWithDelay = (element, className, delay) => {
 };
 
 // 7.2 Add effects on scroll(when user reaches a specific Section)
-const skillLists = document.querySelectorAll("#skillbar li");
-const eduval = document.querySelectorAll("#edubox .skill-value");
-const expval = document.querySelectorAll("#expbox .skill-value");
-const langval = document.querySelectorAll("#langbox .skill-value");
 
-// 7.3 Check whether classlist is present
-const checkClassList = () => {
-  skillLists.forEach((element) => {
-    if (element.classList.contains("AddNavEffect")) {
-      element.classList.remove("AddNavEffect");
-    }
-  });
-};
 const ScrollAni = () => {
   const offSet = document.body.getBoundingClientRect();
 
@@ -124,38 +111,59 @@ const ScrollAni = () => {
   } else {
     navbar.style.background = "#13131380";
   }
-
-  // 7.3 Education Viewport reached
-  if (offsetTop >= -1350 && offsetTop < -950) {
+  if (offsetTop >= -1499 && offsetTop < -899) {
+    navbar.style.background = "#093244e3";
     Skills.style.opacity = 1;
-    checkClassList();
-    addEffectWithDelay(skillLists[0], "AddNavEffect", 80);
-    edubox.style.opacity = 1;
-    eduval.forEach((element) => {
-      addEffectWithDelay(element, "animateYitems", 80);
+    skillValItems.forEach((element, index) => {
+      const delay = index * 70;
+      const className = "animateItems";
+      addEffectWithDelay(element, className, delay);
     });
-  }
-  // 7.4 Experience Viewport reached
-  if (offsetTop >= -1990 && offsetTop < -1610) {
-    checkClassList();
-    addEffectWithDelay(skillLists[1], "AddNavEffect", 80);
-    expbox.style.opacity = 1;
-    expval.forEach((element) => {
-      addEffectWithDelay(element, "animateYitems", 80);
-    });
-  }
-  // 7.5 Languages Viewport reached
-  if (offsetTop >= -2700 && offsetTop < -2300) {
-    checkClassList();
-    addEffectWithDelay(skillLists[2], "AddNavEffect", 80);
-    langbox.style.opacity = 1;
-    langval.forEach((element) => {
-      addEffectWithDelay(element, "animateYitems", 80);
+    skillTitle.forEach((element) => {
+      element.classList.add("animateItems");
     });
   }
 };
 window.addEventListener("scroll", ScrollAni);
 
+// 8. Section: Projects
+const projimg = document.querySelector(".proj-box img");
+const projArr = [
+  "images/projkazujump.png",
+  "images/projAnalog.png",
+  "images/projnotes.png",
+  "images/projstopwatch.png",
+  "images/projcalc.png",
+  "images/projtodo.png",
+];
+let index = 0;
+console.log("Index: ", index);
+const changeProj = () => {
+  setInterval(() => {
+    projimg.src = projArr[index];
+    index = (index + 1) % projArr.length;
+  }, 2500);
+};
+
+// 8.1 Next Btn
+const nextbtn = document.getElementById("btnnext");
+nextbtn.addEventListener("click", () => {
+  console.log("click");
+  index = (index + 1) % projArr.length;
+  console.log(index);
+  projimg.src = projArr[index];
+});
+// 8.2 Prev Btn
+const prevbtn = document.getElementById("btnprev");
+prevbtn.addEventListener("click", () => {
+  index = index - 1;
+  if (index < 0) {
+    index = projArr.length - 1;
+  }
+  console.log(index);
+  console.log("Prev click", index);
+  projimg.src = projArr[index];
+});
 // Onload Event Listeners
 window.addEventListener("DOMContentLoaded", () => {
   typeWriter();
@@ -164,6 +172,5 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     clearInterval(intervalID);
   }, timer);
+  changeProj();
 });
-
-// 8. Section: Skills
