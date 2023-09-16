@@ -54,7 +54,7 @@ const typeWriter = () => {
 const Home = document.getElementById("Home");
 let arrInd = 0;
 const arr = [
-  "images/bgcheck.jpg",
+  "images/bgcheck0.jpg",
   "images/bgcheck1.jpg",
   "images/bgcheck2.jpg",
   "images/bgcheck3.jpg",
@@ -107,13 +107,13 @@ const ScrollAni = () => {
     aboutImageBox.style.opacity = 1;
     aboutBox.classList.add("animateItems");
 
-    navbar.style.background = "#44093aed";
+    navbar.style.background = "rgb(12 78 80 / 84%)";
     setTimeout(() => {
       aboutInfoBox.classList.add("animateItems");
       aboutInfoBox.style.opacity = 1;
     }, 605);
   } else {
-    navbar.style.background = "#13131380";
+    navbar.style.background = "rgb(66 87 107 / 67%)";
   }
 
   // 7.4 Education Viewport reached
