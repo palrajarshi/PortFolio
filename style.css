@@ -1,6 +1,6 @@
 /* 1. Import Font */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fjalla+One&family=Kanit:wght@300&family=Lato&family=Roboto+Slab&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Merriweather:wght@300&family=Mukta:wght@500&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Merriweather:wght@300&family=Mukta:wght@500&family=Poppins&display=swap");
 /* 2. Initialisations */
 * {
   font-family: "Lato", sans-serif;
@@ -54,7 +54,7 @@ body {
 
 /* 3.2 Navbar ul(nav- items) */
 .nav-title {
-  color: #ffb8be;
+  color: #2de7c7;
   margin: 1rem;
   font-family: "Kanit", sans-serif;
 }
@@ -106,7 +106,7 @@ body {
 }
 .list-items a:hover,
 .list-items:nth-child(6):hover {
-  color: #f9aeae;
+  color: #2ac3ec;
   transform: rotateY(360deg);
 }
 
@@ -117,8 +117,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-.logo{
-  font-family: 'Poppins', sans-serif;
+.logo {
+  font-family: "Poppins", sans-serif;
   position: absolute;
   top: 1%;
   left: 1%;
@@ -307,7 +307,7 @@ body {
 }
 #skill-items li a {
   font-size: 1.3rem;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -376,19 +376,6 @@ body {
 .para-duration {
   color: blue;
 }
-
-/* Dynamic Animations */
-.animateYitems {
-  animation: aniYSlide 0.6s ease-in-out;
-}
-@keyframes aniYSlide {
-  0% {
-    transform: translateY(80%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
 .para-primary {
   font-family: "Merriweather", serif;
   font-size: 1.4rem;
@@ -415,3 +402,17 @@ body {
   font-size: 1rem;
   color: #888080;
 }
+/* 5.2.1 Dynamic Animations */
+.animateYitems {
+  animation: aniYSlide 0.6s ease-in-out;
+}
+@keyframes aniYSlide {
+  0% {
+    transform: translateY(80%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* 6 Section: Contacts  */

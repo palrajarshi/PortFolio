@@ -90,79 +90,112 @@ const eduval = document.querySelectorAll("#edubox .skill-value");
 const expval = document.querySelectorAll("#expbox .skill-value");
 const langval = document.querySelectorAll("#langbox .skill-value");
 
-const ScrollAni = () => {
-  const offSet = document.body.getBoundingClientRect();
+// 7.3 Define a callback function for the Intersection Observer
+const callbackIntersect = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Target the element(when it comes into view)
+      const targetElement = entry.target;
 
-  const offsetTop = Number.parseInt(offSet.top);
-  const offsetRight = Number.parseInt(offSet.right);
-  const offsetBottom = Number.parseInt(offSet.bottom);
-  const offsetLeft = Number.parseInt(offSet.left);
-  console.log("Offset top", offsetTop);
-  // console.log("Offset right", offsetRight);
-  // console.log("Offset bottom", offsetBottom);
-  // console.log("Offset left", offsetLeft);
+      if (targetElement.id === "About") {
+        aboutImageBox.style.opacity = 1;
+        aboutBox.classList.add("animateItems");
 
-  // 7.3 Adding Effects to About section
-  if (offsetTop >= -900 && offsetTop < -300) {
-    aboutImageBox.style.opacity = 1;
-    aboutBox.classList.add("animateItems");
-
-    navbar.style.background = "rgb(12 78 80 / 84%)";
-    setTimeout(() => {
-      aboutInfoBox.classList.add("animateItems");
-      aboutInfoBox.style.opacity = 1;
-    }, 605);
-  } else {
-    navbar.style.background = "rgb(66 87 107 / 67%)";
-  }
-
-  // 7.4 Education Viewport reached
-  if (offsetTop >= -1450 && offsetTop < -750) {
-    Skills.style.opacity = 1;
-    try {
-      skillLists[1].classList.remove("AddNavEffect");
-      skillLists[2].classList.remove("AddNavEffect");
-    } catch (err) {
-      console.log("Class List not present");
+        navbar.style.background = "rgb(12 78 80 / 84%)";
+        setTimeout(() => {
+          aboutInfoBox.classList.add("animateItems");
+          aboutInfoBox.style.opacity = 1;
+        }, 605);
+      } else if (targetElement.id === "Skills") {
+        Skills.style.opacity = 1;
+      } else {
+        console.log("Inside else");
+        navbar.style.background = "rgb(66 87 107 / 67%)";
+      }
     }
-    addEffectWithDelay(skillLists[0], "AddNavEffect", 100);
-    edubox.style.opacity = 1;
-    eduval.forEach((element) => {
-      addEffectWithDelay(element, "animateYitems", 80);
-    });
-  }
-  // 7.5 Experience Viewport reached
-  if (offsetTop >= -2100 && offsetTop < -1500) {
-    try {
-      skillLists[0].classList.remove("AddNavEffect");
-      skillLists[2].classList.remove("AddNavEffect");
-    } catch (err) {
-      console.log("ClassList not present");
-    }
-    addEffectWithDelay(skillLists[1], "AddNavEffect", 100);
-    expbox.style.opacity = 1;
-    expval.forEach((element) => {
-      addEffectWithDelay(element, "animateYitems", 80);
-    });
-  }
-  // 7.6 Languages Viewport reached
-  if (offsetTop >= -2700 && offsetTop < -2200) {
-    try {
-      skillLists[0].classList.remove("AddNavEffect");
-      skillLists[1].classList.remove("AddNavEffect");
-    } catch (err) {
-      console.log("ClassList not present");
-    }
-    addEffectWithDelay(skillLists[2], "AddNavEffect", 100);
-    langbox.style.opacity = 1;
-    langval.forEach((element) => {
-      addEffectWithDelay(element, "animateYitems", 80);
-    });
-  }
+  });
 };
-window.addEventListener("scroll", ScrollAni);
 
-// Onload Event Listeners
+// 7.4 Create the Intersection Observer instance
+const observer = new IntersectionObserver(callbackIntersect, {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1,
+});
+
+// 7.5 Attach Observer Intersect
+const sectionsToObserve = ["edubox", "expbox", "langbox"];
+const sectionsToAnimate = document.querySelectorAll("section[id]");
+sectionsToAnimate.forEach((section) => {
+  observer.observe(section);
+});
+
+// 7.6 Intersection Callback(for skills section)
+const intersectionCallback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const targetElement = entry.target;
+
+      // 7.6.1 For education section
+      if (targetElement.id === "edubox") {
+        const className = "AddNavEffect";
+        checkClassPresence(className);
+        addEffectWithDelay(skillLists[0], "AddNavEffect", 100);
+        edubox.style.opacity = 1;
+        eduval.forEach((element) => {
+          addEffectWithDelay(element, "animateYitems", 80);
+        });
+      }
+
+      // 7.6.2 For Experience section
+      else if (targetElement.id === "expbox") {
+        console.log("exp reached");
+        const className = "AddNavEffect";
+        checkClassPresence(className);
+        addEffectWithDelay(skillLists[1], "AddNavEffect", 100);
+        expbox.style.opacity = 1;
+        expval.forEach((element) => {
+          addEffectWithDelay(element, "animateYitems", 80);
+        });
+      }
+      // 7.6.3 For Language section
+      else if (targetElement.id === "langbox") {
+        const className = "AddNavEffect";
+        checkClassPresence(className);
+        addEffectWithDelay(skillLists[2], "AddNavEffect", 100);
+        langbox.style.opacity = 1;
+        langval.forEach((element) => {
+          addEffectWithDelay(element, "animateYitems", 80);
+        });
+      }
+    }
+  });
+};
+
+// 7.7 Checking whether Side bar has class present ("AddNavEffect")
+const checkClassPresence = (ClassName) => {
+  skillLists.forEach((element) => {
+    if (element.classList.contains("AddNavEffect")) {
+      element.classList.remove("AddNavEffect");
+    }
+  });
+};
+// 7.8 Attack observer intersect for skills(edu, exp and lang sections)
+const observer2 = new IntersectionObserver(intersectionCallback, {
+  root: null,
+  rootMargin: "0px", 
+  threshold: 0.4,
+});
+sectionsToObserve.forEach((sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    observer2.observe(section);
+  }
+});
+
+// 8. Section: Skills
+
+// X.X Onload Event Listeners
 window.addEventListener("DOMContentLoaded", () => {
   typeWriter();
   preloadImages();
@@ -171,5 +204,3 @@ window.addEventListener("DOMContentLoaded", () => {
     clearInterval(intervalID);
   }, timer);
 });
-
-// 8. Section: Skills

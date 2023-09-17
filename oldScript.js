@@ -54,10 +54,10 @@ const typeWriter = () => {
 const Home = document.getElementById("Home");
 let arrInd = 0;
 const arr = [
-  "images/bg0.jpg",
-  "images/bg1.jpg",
-  "images/bg2.jpg",
-  "images/bg3.jpg",
+  "images/bgcheck0.jpg",
+  "images/bgcheck1.jpg",
+  "images/bgcheck2.jpg",
+  "images/bgcheck3.jpg",
 ];
 
 // 6. Preloading Images for a smoother effect
@@ -107,17 +107,17 @@ const ScrollAni = () => {
     aboutImageBox.style.opacity = 1;
     aboutBox.classList.add("animateItems");
 
-    navbar.style.background = "#44093aed";
+    navbar.style.background = "rgb(12 78 80 / 84%)";
     setTimeout(() => {
       aboutInfoBox.classList.add("animateItems");
       aboutInfoBox.style.opacity = 1;
     }, 605);
   } else {
-    navbar.style.background = "#13131380";
+    navbar.style.background = "rgb(66 87 107 / 67%)";
   }
 
   // 7.4 Education Viewport reached
-  if (offsetTop >= -1450 && offsetTop < -750) {
+  if (offsetTop >= -1420 && offsetTop < -750) {
     Skills.style.opacity = 1;
     try {
       skillLists[1].classList.remove("AddNavEffect");
@@ -132,7 +132,7 @@ const ScrollAni = () => {
     });
   }
   // 7.5 Experience Viewport reached
-  if (offsetTop >= -2100 && offsetTop < -1500) {
+  else if (offsetTop >= -2100 && offsetTop < -1700) {
     try {
       skillLists[0].classList.remove("AddNavEffect");
       skillLists[2].classList.remove("AddNavEffect");
@@ -146,7 +146,7 @@ const ScrollAni = () => {
     });
   }
   // 7.6 Languages Viewport reached
-  if (offsetTop >= -2700 && offsetTop < -2200) {
+  else if (offsetTop >= -2700 && offsetTop < -2200) {
     try {
       skillLists[0].classList.remove("AddNavEffect");
       skillLists[1].classList.remove("AddNavEffect");
@@ -173,3 +173,4 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // 8. Section: Skills
+
