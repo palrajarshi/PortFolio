@@ -12,7 +12,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  height: 200rem;
+  height: 250rem;
 }
 
 /* 3.Section - Navbar */
@@ -413,9 +413,11 @@ body {
 }
 
 /* 6 Section: Contacts  */
-/* #Contacts {
-  height: 35rem;
-} */
+#Contacts {
+  margin: 3rem 0 2rem 0;
+  opacity: 0;
+  transition: 2.5s ease;
+}
 
 .contact-para {
   text-align: center;
@@ -434,7 +436,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 2rem;
   width: 80%;
-  margin: 3rem auto;
+  margin: 3.7rem auto;
   justify-content: center;
 }
 .card-items {

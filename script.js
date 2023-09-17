@@ -10,6 +10,7 @@ const typeWriteTitle = document.querySelector(".typeWriteTitle");
 const typeWritePara = document.querySelector(".typeWritePara");
 const About = document.getElementById("About");
 const Skills = document.getElementById("Skills");
+const Contacts = document.getElementById("Contacts");
 const edubox = document.getElementById("edubox");
 const expbox = document.getElementById("expbox");
 const langbox = document.getElementById("langbox");
@@ -89,14 +90,14 @@ const skillLists = document.querySelectorAll("#skillbar li");
 const eduval = document.querySelectorAll("#edubox .skill-value");
 const expval = document.querySelectorAll("#expbox .skill-value");
 const langval = document.querySelectorAll("#langbox .skill-value");
-
+const cardItems = document.querySelectorAll(".card-items");
 // 7.3 Define a callback function for the Intersection Observer
 const callbackIntersect = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Target the element(when it comes into view)
+      // 7.3.1 Target the element(when it comes into view)
       const targetElement = entry.target;
-
+      //7.3.2 For About Section
       if (targetElement.id === "About") {
         aboutImageBox.style.opacity = 1;
         aboutBox.classList.add("animateItems");
@@ -106,8 +107,19 @@ const callbackIntersect = (entries, observer) => {
           aboutInfoBox.classList.add("animateItems");
           aboutInfoBox.style.opacity = 1;
         }, 605);
-      } else if (targetElement.id === "Skills") {
+      }
+      // 7.3.3 For Skills Section
+      else if (targetElement.id === "Skills") {
         Skills.style.opacity = 1;
+      }
+      // 7.3.4 For Contacts Section
+      else if (targetElement.id === "Contacts") {
+        console.log("Observing Contacts");
+        cardItems.forEach((element, index) => {
+          Contacts.style.opacity = 1;
+          const delay = index * 80;
+          addEffectWithDelay(element, "animateItems", delay);
+        });
       } else {
         console.log("Inside else");
         navbar.style.background = "rgb(66 87 107 / 67%)";
@@ -183,7 +195,7 @@ const checkClassPresence = (ClassName) => {
 // 7.8 Attack observer intersect for skills(edu, exp and lang sections)
 const observer2 = new IntersectionObserver(intersectionCallback, {
   root: null,
-  rootMargin: "0px", 
+  rootMargin: "0px",
   threshold: 0.4,
 });
 sectionsToObserve.forEach((sectionId) => {
