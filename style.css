@@ -11,9 +11,9 @@
 html {
   scroll-behavior: smooth;
 }
-body {
+/* body {
   height: 250rem;
-}
+} */
 
 /* 3.Section - Navbar */
 #navbar {
@@ -339,7 +339,7 @@ body {
   margin: 1rem;
   font-size: 1.2rem;
 }
-.uil-analytics {
+.uil-clipboard-alt{
   font-size: 2.1rem;
   background-color: blue;
   border-radius: 30%;
@@ -447,13 +447,13 @@ body {
   transition: 0.6s ease;
 }
 .card-items:hover {
- transform: scale(1.1);
+  transform: scale(1.1);
 }
-.text-center{
+.text-center {
   text-align: center;
   margin-top: 1rem;
 }
-.item-icons{
+.item-icons {
   display: flex;
   justify-content: center;
   color: white;
@@ -463,4 +463,14 @@ body {
   width: 50%;
   padding: 1rem;
   margin: auto;
+}
+
+/* Foot: */
+#Foot {
+  background: #545a87;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  margin-top: 1rem;
 }
