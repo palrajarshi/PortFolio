@@ -174,7 +174,7 @@ html {
 
 /* 4. Section - About */
 #About {
-  margin: 2rem 0 2rem 0;
+  margin: 2rem 0 4rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,7 +288,7 @@ html {
 #skillbar {
   position: sticky;
   left: 0;
-  top: 20%;
+  top: 30%;
   width: 20%;
   height: 15%;
   display: flex;
@@ -332,14 +332,14 @@ html {
   font-size: 2.2rem;
   color: blue;
   font-family: "Mukta", sans-serif;
-  margin: 3rem 1rem 1rem 1rem;
+  margin: 0rem 1rem 1rem 1rem;
 }
 .skill-value {
   display: flex;
   margin: 1rem;
   font-size: 1.2rem;
 }
-.uil-clipboard-alt{
+.uil-clipboard-alt {
   font-size: 2.1rem;
   background-color: blue;
   border-radius: 30%;
@@ -443,7 +443,7 @@ html {
   /* border: 2px solid; */
   padding-top: 0.5rem;
   border-radius: 0.8rem;
-  box-shadow: -0.3rem -0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+  box-shadow: -0.2rem -0.2rem 0.9rem 0.3rem rgba(0, 0, 0, 0.3);
   transition: 0.6s ease;
 }
 .card-items:hover {

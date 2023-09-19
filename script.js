@@ -154,8 +154,9 @@ const intersectionCallback = (entries) => {
         checkClassPresence(className);
         addEffectWithDelay(skillLists[0], "AddNavEffect", 100);
         edubox.style.opacity = 1;
-        eduval.forEach((element) => {
-          addEffectWithDelay(element, "animateYitems", 80);
+        eduval.forEach((element, index) => {
+          const delay = index * 80;
+          addEffectWithDelay(element, "animateYitems", delay);
         });
       }
 
@@ -166,8 +167,9 @@ const intersectionCallback = (entries) => {
         checkClassPresence(className);
         addEffectWithDelay(skillLists[1], "AddNavEffect", 100);
         expbox.style.opacity = 1;
-        expval.forEach((element) => {
-          addEffectWithDelay(element, "animateYitems", 80);
+        expval.forEach((element, index) => {
+          const delay = index * 80;
+          addEffectWithDelay(element, "animateYitems", delay);
         });
       }
       // 7.6.3 For Language section
@@ -176,8 +178,9 @@ const intersectionCallback = (entries) => {
         checkClassPresence(className);
         addEffectWithDelay(skillLists[2], "AddNavEffect", 100);
         langbox.style.opacity = 1;
-        langval.forEach((element) => {
-          addEffectWithDelay(element, "animateYitems", 80);
+        langval.forEach((element, index) => {
+          const delay = index * 80;
+          addEffectWithDelay(element, "animateYitems", delay);
         });
       }
     }
