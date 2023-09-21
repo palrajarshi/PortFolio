@@ -14,8 +14,9 @@ const Contacts = document.getElementById("Contacts");
 const edubox = document.getElementById("edubox");
 const expbox = document.getElementById("expbox");
 const langbox = document.getElementById("langbox");
-
+const projbox = document.querySelector(".projbox");
 let intervalID;
+
 // 2. Menubar logic
 menubar.addEventListener("click", () => {
   navbar.style.transform = "translateX(0)";
@@ -104,6 +105,7 @@ const callbackIntersect = (entries, observer) => {
       // 7.3.3 For Skills Section
       else if (targetElement.id === "Skills") {
         Skills.style.opacity = 1;
+        skillbar.style.opacity = 1;
       }
       // 7.3.4 For Contacts Section
       else if (targetElement.id === "Contacts") {
@@ -117,6 +119,7 @@ const callbackIntersect = (entries, observer) => {
       // 7.3.5 For Projects Section
       else if (targetElement.id === "Projects") {
         console.log("Observing Projects");
+        projbox.style.opacity = 1;
         projitems.forEach((element, index) => {
           const delay = index * 60;
           addEffectWithDelay(element, "animateItems", delay);
@@ -211,7 +214,7 @@ sectionsToObserve.forEach((sectionId) => {
 
 // 8. Projects Section
 const textover = document.querySelectorAll(".text-over");
-const projbox = document.querySelector(".projbox");
+
 projbox.addEventListener("mouseover", (e) => {
   console.log("Mouse in");
   const targetEl = e.target.closest(".text-over");

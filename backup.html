@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Portfolio| Rajarshi Pal</title>
     <!-- CSS File -->
     <link rel="stylesheet" href="backup.css" />
     <!-- CSS ICONS -->
@@ -11,9 +11,28 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
     />
-    <!-- FONTS -->
+    <!-- Website icon  -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="RP/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="RP/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="RP/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
+    <!-- Menu button and navbar -->
     <div id="menubtn"><i class="uil uil-bars btn-menu"></i></div>
     <nav id="navbar">
       <h2 class="nav-title">Navigation</h2>
@@ -22,8 +41,8 @@
         <li class="list-items"><a href="#Home">Home</a></li>
         <li class="list-items"><a href="#About">About</a></li>
         <li class="list-items"><a href="#Skills">Skills</a></li>
-        <li class="list-items"><a href="#">Projects</a></li>
-        <li class="list-items"><a href="#">Footer</a></li>
+        <li class="list-items"><a href="#Projects">Projects</a></li>
+        <li class="list-items"><a href="#Contacts">Contacts</a></li>
         <li class="list-items list-para">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -50,7 +69,9 @@
       </ul>
     </nav>
 
+    <!-- Home Section -->
     <section id="Home">
+      <div class="logo">rajarshi.</div>
       <div class="typeWriteBox">
         <h2 class="typeWriteTitle">
           <!-- Text will be dynamically added -->
@@ -64,6 +85,7 @@
       </div>
     </section>
 
+    <!-- About Section -->
     <section id="About">
       <div class="AboutBox">
         <div class="aboutImgBox">
@@ -72,28 +94,24 @@
         <div class="aboutInfoBox">
           <h1 class="title-info">About Me</h1>
           <p class="para-info">
-            I am a JavaScript and Frontend Developer based on West Bengal,
-            India.
+            I am a passionate JavaScript and Frontend Developer based on West
+            Bengal, India who likes to transform imagination into reality.
           </p>
           <div class="aboutSpanBox">
-            <div class="span-label">
-              <span class="label-items">Name:</span>
-              <span class="label-items">Date of Birth:</span>
-              <span class="label-items">Address:</span>
-              <span class="label-items">Zip Code:</span>
-              <span class="label-items">Email:</span>
-              <span class="label-items">Phone:</span>
-            </div>
-            <div class="span-value">
-              <span class="val-items">Rajarshi Pal</span>
-              <span class="val-items">Marth 23<sup>rd</sup>, 2004</span>
-              <span class="val-items"
-                >65/B Nayapatty Road,Nagerbazar, Kolkata</span
-              >
-              <span class="val-items">700055</span>
-              <span class="val-items">rajarship23@gmail.com</span>
-              <span class="val-items">+91 8100091562</span>
-            </div>
+            <span class="label-items label1">Name:</span>
+            <span class="label-items label2">Date of Birth:</span>
+            <span class="label-items label3">Address:</span>
+            <span class="label-items label4">Zip Code:</span>
+            <span class="label-items label5">Email:</span>
+            <span class="label-items label6">Phone:</span>
+            <span class="val-items val1">Rajarshi Pal</span>
+            <span class="val-items val2">Marth 23<sup>rd</sup>, 2004</span>
+            <span class="val-items val3"
+              >65/B Nayapatty Road,Nagerbazar, Kolkata</span
+            >
+            <span class="val-items val4">700055</span>
+            <span class="val-items val5">rajarship23@gmail.com</span>
+            <span class="val-items val6">+91 8100091562</span>
           </div>
           <div class="aboutBtnBox">
             <i class="uil uil-github about-gitIcon"></i>
@@ -105,87 +123,258 @@
       </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="Skills">
-      <div class="skillBox">
-        <div id="educationBox" class="skill-items">
-          <h2 class="skill-title">Education</h2>
-          <div class="skill-val">
-            <div class="skill-valItems" id="skill11">
-              <p class="para-primary">2009 - 2021</p>
-              <p class="para-secondary">Schooling</p>
+      <nav class="skill-navbar" id="skillbar">
+        <ul id="skill-items">
+          <li>
+            <a href="#edubox">Education</a>
+          </li>
+          <li>
+            <a href="#expbox">Experience</a>
+          </li>
+          <li>
+            <a href="#langbox">Languages</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Education -->
+      <div class="skillsbox">
+        <div id="edubox">
+          <h3 class="skill-title">Education</h3>
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-duration">2020-2024</p>
+              <p class="para-primary">Bachelor's Degree</p>
+              <p class="para-secondary">Guru Nanak Institute of Technology</p>
               <p class="para-tertiary">
-                Went to Kendriya Vidyalaya Cossipore, Kolkata.
-              </p>
-            </div>
-            <div class="skill-valItems">
-              <p class="para-primary">2021 - present(until 2025)</p>
-              <p class="para-secondary">Bachelor's Degree(B.Tech)</p>
-              <p class="para-tertiary">
-                At Guru Nanak Institute Of Technology (G.N.I.T), Sodepur,
-                Kolkata
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="skiBox" class="skill-items">
-          <h2 class="skill-title">Skills</h2>
-          <div class="skill-val">
-            <div class="skill-valItems">
-              <p class="para-primary">2023</p>
-              <p class="para-secondary">HTML</p>
-              <p class="para-tertiary">Acquired through Self learning.</p>
-            </div>
-            <div class="skill-valItems">
-              <p class="para-primary">2023</p>
-              <p class="para-secondary">CSS</p>
-              <p class="para-tertiary">Acquired through Self learning.</p>
-            </div>
-            <div class="skill-valItems">
-              <p class="para-primary">2023</p>
-              <p class="para-secondary">JavaScript</p>
-              <p class="para-tertiary">Acquired through Self learning.</p>
-            </div>
-            <div class="skill-valItems">
-              <p class="para-primary">2021</p>
-              <p class="para-secondary">Writing</p>
-              <p class="para-tertiary">
-                Hobby. Creative and Imaginative Writing.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
               </p>
             </div>
           </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-duration">2020-2024</p>
+              <p class="para-primary">Bachelor's Degree</p>
+              <p class="para-secondary">Guru Nanak Institute of Technology</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
+            </div>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-duration">2020-2024</p>
+              <p class="para-primary">Bachelor's Degree</p>
+              <p class="para-secondary">Guru Nanak Institute of Technology</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
+            </div>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
         </div>
-        <div id="languageBox" class="skill-items">
-          <h2 class="skill-title">Language</h2>
-          <div class="skill-val">
-            <div class="skill-valItems">
-              <p class="para-primary">Mother Tongue:</p>
-              <p class="para-secondary">Bengali</p>
+
+        <!-- Experience -->
+        <div id="expbox">
+          <h3 class="skill-title margintop">Experiences</h3>
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-duration">2020-2024</p>
+              <p class="para-primary">Bachelor's Degree</p>
+              <p class="para-secondary">Guru Nanak Institute of Technology</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
             </div>
-            <div class="skill-valItems">
-              <p class="para-primary">Prefered Language:</p>
-              <p class="para-secondary">English</p>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-duration">2020-2024</p>
+              <p class="para-primary">Bachelor's Degree</p>
+              <p class="para-secondary">Guru Nanak Institute of Technology</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
             </div>
-            <div class="skill-valItems">
-              <p class="para-primary">Secondary Language:</p>
-              <p class="para-secondary">Hindi</p>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-duration">2020-2024</p>
+              <p class="para-primary">Bachelor's Degree</p>
+              <p class="para-secondary">Guru Nanak Institute of Technology</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
             </div>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+        </div>
+
+        <!-- Language -->
+        <div id="langbox">
+          <h3 class="skill-title margintop">Languages</h3>
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-primary">English</p>
+              <p class="para-secondary">Prefered Language</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
+            </div>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-primary">Hindi</p>
+              <p class="para-secondary">Secondary Language</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
+            </div>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+          <div class="skill-value">
+            <div class="skill-btns"><i class="uil uil-clipboard-alt"></i></div>
+            <div class="skill-para">
+              <p class="para-primary">Bengali</p>
+              <p class="para-secondary">Mother tongue</p>
+              <p class="para-tertiary">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Recusandae dignissimos ducimus obcaecati, praesentium tenetur
+                omnis?
+              </p>
+            </div>
+          </div>
+          <hr style="border: 1px solid rgba(0, 0, 0, 0.3); width: 80%" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="Projects">
+      <h1 class="contact-title">Our Projects</h1>
+      <p class="contact-para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nobis
+        sunt rem sequi inventore? Nam, eveniet?
+      </p>
+      <div class="projbox">
+        <div class="proj-items">
+          <img src="images/bg0.jpg" alt="" />
+          <div class="text-over">
+            <a href="#"><i class="uil uil-link link-icon"></i></a>
+            <p>I am Bg 1</p>
+          </div>
+        </div>
+        <div class="proj-items">
+          <img src="images/bg2.jpg" alt="" />
+          <div class="text-over">
+            <a href="#"><i class="uil uil-link link-icon"></i></a>
+            <p>I am Bg 2</p>
+          </div>
+        </div>
+        <div class="proj-items">
+          <img src="images/bg0.jpg" alt="" />
+          <div class="text-over">
+            <a href="#"><i class="uil uil-link link-icon"></i></a>
+            <p>I am Bg 3</p>
+          </div>
+        </div>
+        <div class="proj-items">
+          <img src="images/bg2.jpg" alt="" />
+          <div class="text-over">
+            <a href="#"><i class="uil uil-link link-icon"></i></a>
+            <p>I am Bg 4</p>
+          </div>
+        </div>
+        <div class="proj-items">
+          <img src="images/bg0.jpg" alt="" />
+          <div class="text-over">
+            <a href="#"><i class="uil uil-link link-icon"></i></a>
+            <p>I am Bg 5</p>
+          </div>
+        </div>
+        <div class="proj-items">
+          <img src="images/bg2.jpg" alt="" />
+          <div class="text-over">
+            <a href="#"><i class="uil uil-link link-icon"></i></a>
+            <p>I am Bg 6</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="Projects">
-      <h1 class="project-title">Our Projects</h1>
-      <p class="project-para">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
-        veritatis?
+    <!-- Contacts Section -->
+    <section id="Contacts">
+      <h1 class="contact-title">Contact Me</h1>
+      <p class="contact-para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nobis
+        sunt rem sequi inventore? Nam, eveniet?
       </p>
-      <div class="proj-box">
-        <i id="btnprev" class="uil uil-angle-left-b icons"></i>
-        <i id="btnnext" class="uil uil-angle-right-b icons"></i>
-        <img src="images/projkazujump.png" alt="">
+      <div class="contact-cards">
+        <div class="card-items">
+          <div class="item-icons"><i class="uil uil-whatsapp"></i></div>
+          <p class="para-primary text-center">Whatsapp</p>
+          <p class="para-tertiary text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div class="card-items">
+          <div class="item-icons"><i class="uil uil-linkedin"></i></div>
+          <p class="para-primary text-center">LinkedIn</p>
+          <p class="para-tertiary text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis!
+          </p>
+        </div>
+        <div class="card-items">
+          <div class="item-icons"><i class="uil uil-telegram-alt"></i></div>
+          <p class="para-primary text-center">Email</p>
+          <p class="para-tertiary text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis!
+          </p>
+        </div>
+        <div class="card-items">
+          <div class="item-icons"><i class="uil uil-globe"></i></div>
+          <p class="para-primary text-center">Website</p>
+          <p class="para-tertiary text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis!
+          </p>
+        </div>
       </div>
     </section>
-    <script src="backup.js"></script>
+    <footer id="Foot">&copy; Portfolio Made by Rajarshi Pal</footer>
+    <script src="oldScript.js" defer></script>
   </body>
 </html>

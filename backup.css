@@ -1,6 +1,6 @@
 /* 1. Import Font */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fjalla+One&family=Kanit:wght@300&family=Lato&family=Roboto+Slab&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Merriweather:wght@300&family=Mukta:wght@500&family=Poppins&display=swap");
 /* 2. Initialisations */
 * {
   font-family: "Lato", sans-serif;
@@ -11,19 +11,19 @@
 html {
   scroll-behavior: smooth;
 }
-body {
-  height: 150rem;
-}
+/* body {
+  height: 250rem;
+} */
 
 /* 3.Section - Navbar */
 #navbar {
-  background: #44093a80;
+  background: rgb(66 87 107 / 67%);
   z-index: 1;
   position: fixed;
   right: 0;
   top: 0;
   height: 100vh;
-  width: 20vw;
+  width: 18rem;
   transition: all 0.6s ease;
   transform: translateX(100%);
 }
@@ -33,7 +33,7 @@ body {
   text-align: center;
   border-radius: 0.6rem;
   font-size: 2rem;
-  background: #963d636b;
+  background: #4e535f9e;
   color: white;
   position: fixed;
   top: 2%;
@@ -48,13 +48,13 @@ body {
   right: 5%;
   cursor: pointer;
 }
-.btn-cancel:hover{
+.btn-cancel:hover {
   color: #b353f9;
 }
 
 /* 3.2 Navbar ul(nav- items) */
 .nav-title {
-  color: #ffb8be;
+  color: #2de7c7;
   margin: 1rem;
   font-family: "Kanit", sans-serif;
 }
@@ -106,7 +106,7 @@ body {
 }
 .list-items a:hover,
 .list-items:nth-child(6):hover {
-  color: #f9aeae;
+  color: #2ac3ec;
   transform: rotateY(360deg);
 }
 
@@ -117,19 +117,28 @@ body {
   justify-content: center;
   align-items: center;
 }
+.logo {
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d2d64;
+}
 #Home::before {
   content: "";
   position: absolute;
   height: 100%;
   width: 100%;
-  background: var(--changeBg, url(images/bg3.jpg));
+  background: var(--changeBg, url(images/bgcheck3.jpg));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
-  z-index: -1;
+  z-index: -3;
   transition: background 0.6s ease;
-  opacity: 95%;
+  opacity: 80%;
 }
 
 /* 4.1 Home: Title and Para */
@@ -140,7 +149,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "DM Serif Display", serif;
-  color: #eee0e0;
+  color: #2d2d64;
 }
 .typeWriteTitle {
   font-size: 3.5rem;
@@ -165,13 +174,10 @@ body {
 
 /* 4. Section - About */
 #About {
-  /* border: 2px solid black; */
-  height: 90vh;
+  margin: 2rem 0 4rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(to bottom, #87CEEB, #ffffff); */
-  background: linear-gradient(135deg, #7d14ee, #d58cff, #a7d7f9);
 }
 .AboutBox {
   display: flex;
@@ -191,52 +197,89 @@ body {
 /* 4.1 Section - About Info Box */
 .aboutInfoBox {
   opacity: 0;
-  padding: 1rem;
   height: 100%;
   width: 55%;
   margin-left: 3rem;
   transition: all 1.6s ease-in-out;
 }
 .title-info {
-  font-size: 3rem;
+  font-size: 3.5rem;
   display: flex;
   align-items: center;
   height: 15%;
-  color: white;
+  color: blue;
+  font-family: "Mukta", sans-serif;
 }
 .para-info {
-  font-size: 1.3rem;
-  color: rgb(93 39 39);
+  font-size: 1.1rem;
+  color: #787278;
   height: 15%;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 /* 4.2 Section - Spanbox (label and val) Box  */
 .aboutSpanBox {
-  display: flex;
-  font-size: 1.2rem;
-  height: 55%;
+  display: grid;
+  grid-template-areas:
+    "label1 val1"
+    "label2 val2"
+    "label3 val3"
+    "label4 val4"
+    "label5 val5"
+    "label6 val6";
 }
-.span-label {
-  display: flex;
-  flex-direction: column;
+
+.label1 {
+  grid-area: label1;
+}
+.label2 {
+  grid-area: label2;
+}
+.label3 {
+  grid-area: label3;
+}
+.label4 {
+  grid-area: label4;
+}
+.label5 {
+  grid-area: label5;
+}
+.label6 {
+  grid-area: label6;
+}
+.val1 {
+  grid-area: val1;
+}
+.val2 {
+  grid-area: val2;
+}
+.val3 {
+  grid-area: val3;
+}
+.val4 {
+  grid-area: val4;
+}
+.val5 {
+  grid-area: val5;
+}
+.val6 {
+  grid-area: val6;
+}
+.label-items{
+  white-space: nowrap;
+  font-size: 1.25rem;
+  line-height: 3.1rem;
   color: #2e2c2c;
-  width: 22%;
+  margin-right: 1rem;
   font-weight: bold;
 }
-.span-value {
-  display: flex;
-  flex-direction: column;
-  /* border: 2px solid; */
-  width: 75%;
-  color: rgb(255, 255, 255);
+.val-items{
+  white-space: nowrap;
+  font-size: 1.25rem;
+  line-height: 3.1rem;
+  color: #948d8d;
 }
-
-.label-items,
-.val-items {
-  line-height: 3rem;
-}
-
 /* 4.3 Section - Button Box  */
 .aboutBtnBox {
   display: flex;
@@ -247,7 +290,7 @@ body {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
-  margin-left: 0.3rem;
+  margin-left: 0.8rem;
   background-color: #3e64ff;
   border: #5871d6c5;
   padding: 0.6rem;
@@ -259,7 +302,7 @@ body {
 }
 .about-gitIcon {
   cursor: pointer;
-  margin-left: 0.3rem;
+  /* margin-left: 0.3rem; */
   font-size: 2.5rem;
 }
 
@@ -272,62 +315,259 @@ body {
 
 /* 5. Section - Skills */
 #Skills {
-  opacity: 0;
-  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.6s ease-in-out;
-  /* background: linear-gradient(to left, #87ceeb, #dfeee5); */
-  background: linear-gradient(to left, #b27bfc, #87ceeb);
-}
-.skillBox {
-  height: 90%;
-  width: 80%;
-  display: grid;
-  grid-template-areas:
-    "skiBox eduBox langBox"
-    "skiBox eduBox langBox"
-    "skiBox eduBox langBox"
-    "skiBox eduBox langBox";
-}
-#educationBox {
-  grid-area: eduBox;
-}
-#skiBox {
-  grid-area: skiBox;
-}
-#languageBox {
-  grid-area: langBox;
-}
-.skill-title {
-  margin-bottom: 0.6rem;
-  font-size: 2rem;
-  font-family: "DM Serif Display", serif;
+  opacity: 0;
+  transition: 0.6s ease;
 }
 
-/* 5.1 Section: Skills Paras(Info) */
-.skill-valItems {
-  /* border: 0.15rem solid; */
-  /* border-radius: 1rem; */
-  font-size: 1rem;
-  width: 95%;
-  margin-bottom: 0.6rem;
+/* 5.1 Skill Navbar */
+#skillbar {
+  position: sticky;
+  left: 0;
+  top: 30%;
+  width: 20%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#skill-items {
+  list-style: none;
+}
+#skill-items li {
   padding: 0.5rem;
+  margin: 0.1rem;
+}
+#skill-items li a {
+  font-size: 1.3rem;
+  font-family: "Kanit", sans-serif;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+#skill-items li a:hover {
+  color: blue;
+}
+
+/* Dynamically add effect */
+.AddNavEffect {
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 0.4rem;
+  transform: translateX(20%);
+  transition: 0.6s ease;
+  border-bottom: 0.2rem solid blue;
+}
+.skillsbox {
+  width: 75%;
+  height: 100%;
+  margin-left: 1rem;
+}
+
+.skill-title {
+  font-size: 2.2rem;
+  color: blue;
+  font-family: "Mukta", sans-serif;
+  margin: 0rem 1rem 1rem 1rem;
+}
+.margintop {
+  margin-top: 2rem;
+}
+.skill-value {
+  display: flex;
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+.uil-clipboard-alt {
+  font-size: 2.1rem;
+  background-color: blue;
+  border-radius: 30%;
+  color: white;
+  padding: 0.2rem;
+}
+.skill-btns {
+  margin: 0.5rem 0.5rem 0 0.6rem;
+}
+.skill-para {
+  width: 75%;
+}
+
+#edubox {
+  transform: translateY(0%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+#expbox {
+  transform: translateY(0%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+#langbox {
+  transform: translateY(0%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+/* 5.2 Section: Skills, Para  */
+.para-duration {
+  color: blue;
 }
 .para-primary {
-  font-family: "DM Serif Display", serif;
-  padding-bottom: 0.5rem;
+  font-family: "Merriweather", serif;
+  font-size: 1.4rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-weight: bold;
+}
+.para-duration {
+  font-family: "Merriweather", serif;
+  padding: 0.2rem;
+  margin: 0.2rem;
 }
 .para-secondary {
-  font-family: "Fjalla One", sans-serif;
-  border: 0.2rem solid;
-  display: inline-block;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  font-size: 1.3rem;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-size: 1.1rem;
 }
 .para-tertiary {
-  font-family: "DM Serif Display", serif;
+  font-family: "Merriweather", serif;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-size: 1rem;
+  color: #888080;
+}
+/* 5.2.1 Dynamic Animations */
+.animateYitems {
+  animation: aniYSlide 0.6s ease-in-out;
+}
+@keyframes aniYSlide {
+  0% {
+    transform: translateY(80%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* 6 Section: Projects  */
+#Projects {
+  /* opacity: 0; */
+  margin-top: 2rem;
+  transition: 0.6s ease;
+}
+.projbox {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+}
+.proj-items {
+  position: relative;
+}
+.proj-items img {
+  border: 2px solid white;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+/* 6.1 Text over */
+.text-over {
+  color: wheat;
+  border: 2px solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  font-size: 1.6rem;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s ease;
+}
+.text-over p {
+  font-family: "Mukta", sans-serif;
+}
+.text-over a {
+  color: white;
+}
+.bgBlue {
+  background: #1b1af2bd;
+  transition: 0.3s ease;
+}
+.link-icon {
+  cursor: pointer;
+  margin-right: 0.7rem;
+  /* font-size: 2rem; */
+}
+/* 7 Section: Contacts  */
+#Contacts {
+  margin: 3rem 0 2rem 0;
+  opacity: 0;
+  transition: 2.5s ease;
+}
+
+.contact-para {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.contact-title {
+  text-align: center;
+  font-size: 3.5rem;
+  color: blue;
+  font-family: "Mukta", sans-serif;
+}
+
+/* 6.1 Section: Contacts - Card items */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2rem;
+  width: 80%;
+  margin: 3.7rem auto;
+  justify-content: center;
+}
+.card-items {
   padding-top: 0.5rem;
+  border-radius: 0.8rem;
+  box-shadow: -0.2rem -0.2rem 0.9rem 0.3rem rgba(0, 0, 0, 0.3);
+  transition: 0.6s ease;
+  height: 19rem;
+}
+.card-items:hover {
+  transform: scale(1.1);
+}
+.text-center {
+  text-align: center;
+  margin-top: 1rem;
+}
+.item-icons {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background: blue;
+  border-radius: 50%;
+  font-size: 4rem;
+  width: 44%;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+/* Foot Section */
+#Foot {
+  background: #545a87;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+
+/* For width 1450px */
+@media (max-width: 1450px) {
+  .aboutImgBox {
+    width: 25rem;
+    height: 32.6rem;
+  }
 }
