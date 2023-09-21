@@ -650,6 +650,7 @@ html {
     line-height: 2.6rem;
   }
 }
+/* From width 395px */
 @media (max-width: 395px) {
   .aboutSpanBox {
     font-size: 0.81rem;
@@ -660,4 +661,13 @@ html {
   .typeWriteTitle {
     font-size: 1.8rem;
   }
+}
+/* From width 350px */
+@media (max-width: 350px) {
+  .para{
+    font-size: 0.8rem;
+    }
+    html, body{
+      overflow: auto;
+    }
 }
