@@ -23,7 +23,7 @@ html {
   right: 0;
   top: 0;
   height: 100vh;
-  width: 20vw;
+  width: 18rem;
   transition: all 0.6s ease;
   transform: translateX(100%);
 }
@@ -197,7 +197,6 @@ html {
 /* 4.1 Section - About Info Box */
 .aboutInfoBox {
   opacity: 0;
-  padding: 1rem;
   height: 100%;
   width: 55%;
   margin-left: 3rem;
@@ -217,12 +216,14 @@ html {
   height: 15%;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 /* 4.2 Section - Spanbox (label and val) Box  */
 .aboutSpanBox {
   display: flex;
   font-size: 1.1rem;
   height: 55%;
+  margin-bottom: 1rem;
 }
 .span-label {
   display: flex;
@@ -328,11 +329,13 @@ html {
 }
 
 .skill-title {
-  margin: 1rem;
   font-size: 2.2rem;
   color: blue;
   font-family: "Mukta", sans-serif;
   margin: 0rem 1rem 1rem 1rem;
+}
+.margintop {
+  margin-top: 2rem;
 }
 .skill-value {
   display: flex;
@@ -411,8 +414,58 @@ html {
     transform: translateY(0%);
   }
 }
-
-/* 6 Section: Contacts  */
+/* 6 Section: Projects  */
+#Projects {
+  /* opacity: 0; */
+  margin-top: 2rem;
+  transition: 0.6s ease;
+}
+.projbox {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+}
+.proj-items {
+  position: relative;
+}
+.proj-items img {
+  border: 2px solid white;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+/* 6.1 Text over */
+.text-over {
+  color: wheat;
+  border: 2px solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  font-size: 1.6rem;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s ease;
+}
+.text-over p {
+  font-family: "Mukta", sans-serif;
+}
+.text-over a {
+  color: white;
+}
+.bgBlue {
+  background: #1b1af2bd;
+  transition: 0.3s ease;
+}
+.link-icon {
+  cursor: pointer;
+  margin-right: 0.7rem;
+  /* font-size: 2rem; */
+}
+/* 7 Section: Contacts  */
 #Contacts {
   margin: 3rem 0 2rem 0;
   opacity: 0;
@@ -440,11 +493,11 @@ html {
   justify-content: center;
 }
 .card-items {
-  /* border: 2px solid; */
   padding-top: 0.5rem;
   border-radius: 0.8rem;
   box-shadow: -0.2rem -0.2rem 0.9rem 0.3rem rgba(0, 0, 0, 0.3);
   transition: 0.6s ease;
+  height: 19rem;
 }
 .card-items:hover {
   transform: scale(1.1);
@@ -459,13 +512,13 @@ html {
   color: white;
   background: blue;
   border-radius: 50%;
-  font-size: 6rem;
-  width: 50%;
+  font-size: 4rem;
+  width: 44%;
   padding: 1rem;
-  margin: auto;
+  margin: 1rem auto;
 }
 
-/* Foot: */
+/* Foot Section */
 #Foot {
   background: #545a87;
   color: white;
@@ -474,3 +527,6 @@ html {
   padding: 0.2rem;
   margin-top: 1rem;
 }
+
+
+/* Responsive */

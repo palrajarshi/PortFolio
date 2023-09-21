@@ -61,14 +61,6 @@ const arr = [
   "images/bgcheck3.jpg",
 ];
 
-// 6. Preloading Images for a smoother effect
-const preloadImages = () => {
-  for (let i = 0; i < arr.length; i++) {
-    const img = new Image();
-    img.src = arr[i];
-  }
-};
-
 let timer = arr.length * 3000;
 const bgChanger = () => {
   Home.style.setProperty("--changeBg", `url(${arr[arrInd]})`);
@@ -91,6 +83,7 @@ const eduval = document.querySelectorAll("#edubox .skill-value");
 const expval = document.querySelectorAll("#expbox .skill-value");
 const langval = document.querySelectorAll("#langbox .skill-value");
 const cardItems = document.querySelectorAll(".card-items");
+const projitems = document.querySelectorAll(".proj-items");
 // 7.3 Define a callback function for the Intersection Observer
 const callbackIntersect = (entries, observer) => {
   entries.forEach((entry) => {
@@ -118,6 +111,14 @@ const callbackIntersect = (entries, observer) => {
         cardItems.forEach((element, index) => {
           Contacts.style.opacity = 1;
           const delay = index * 80;
+          addEffectWithDelay(element, "animateItems", delay);
+        });
+      }
+      // 7.3.5 For Projects Section
+      else if (targetElement.id === "Projects") {
+        console.log("Observing Projects");
+        projitems.forEach((element, index) => {
+          const delay = index * 60;
           addEffectWithDelay(element, "animateItems", delay);
         });
       } else {
@@ -208,12 +209,24 @@ sectionsToObserve.forEach((sectionId) => {
   }
 });
 
-// 8. Section: Skills
+// 8. Projects Section
+const textover = document.querySelectorAll(".text-over");
+const projbox = document.querySelector(".projbox");
+projbox.addEventListener("mouseover", (e) => {
+  console.log("Mouse in");
+  const targetEl = e.target.closest(".text-over");
+  targetEl.style.opacity = 1;
+  targetEl.classList.add("bgBlue");
+});
+projbox.addEventListener("mouseout", (e) => {
+  const targetEl = e.target.closest(".text-over");
+  targetEl.style.opacity = 0;
+  targetEl.classList.remove("bgBlue");
+});
 
-// X.X Onload Event Listeners
+// 9. Onload Event Listeners
 window.addEventListener("DOMContentLoaded", () => {
   typeWriter();
-  preloadImages();
   intervalID = setInterval(bgChanger, 3000);
   setTimeout(() => {
     clearInterval(intervalID);
