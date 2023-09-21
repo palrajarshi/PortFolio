@@ -533,12 +533,22 @@ html {
 }
 
 /* Responsive */
-
+@media (min-width: 1451px) {
+  .projbox {
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
+  .contact-cards {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+}
 /* From width 1450px */
 @media (max-width: 1450px) {
   .aboutImgBox {
     width: 25rem;
     height: 32.6rem;
+  }
+  .contact-cards {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   }
 }
 
@@ -652,11 +662,14 @@ html {
 }
 /* From width 395px */
 @media (max-width: 395px) {
+  #navbar {
+    width: 90vw;
+  }
   .aboutSpanBox {
     font-size: 0.81rem;
   }
-  .para{
-  font-size: 0.9rem;
+  .para {
+    font-size: 0.9rem;
   }
   .typeWriteTitle {
     font-size: 1.8rem;
@@ -664,10 +677,14 @@ html {
 }
 /* From width 350px */
 @media (max-width: 350px) {
-  .para{
+  #navbar {
+    width: 100vw;
+  }
+  .para {
     font-size: 0.8rem;
-    }
-    html, body{
-      overflow: auto;
-    }
+  }
+  html,
+  body {
+    overflow: auto;
+  }
 }
