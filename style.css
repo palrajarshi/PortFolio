@@ -39,6 +39,7 @@ html {
   top: 2%;
   right: 1%;
   cursor: pointer;
+  z-index: 10;
 }
 .btn-cancel {
   font-size: 2rem;
@@ -533,7 +534,7 @@ html {
 
 /* Responsive */
 
-/* For width 1450px */
+/* From width 1450px */
 @media (max-width: 1450px) {
   .aboutImgBox {
     width: 25rem;
@@ -541,10 +542,14 @@ html {
   }
 }
 
+/* From width 900px */
 @media (max-width: 900px) {
   .aboutImgBox {
     width: 34rem;
     margin: auto;
+  }
+  .projbox {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   }
   .title-info {
     display: block;
@@ -562,8 +567,85 @@ html {
   }
   .skillsbox {
     margin-left: 3rem;
+    width: 100%;
+  }
+  /* .skillsbox {
+    
+  } */
+}
+/* From width 680px */
+@media (max-width: 680px) {
+  .typeWriteTitle {
+    font-size: 2.5rem;
+  }
+  .para {
+    white-space: inherit;
+    font-size: 1.3rem;
+  }
+  .aboutImgBox {
+    width: 28rem;
+  }
+  #skillbar {
+    margin-left: 1rem;
+  }
+  .para-primary {
+    font-size: 1rem;
+  }
+  .para-duration {
+    font-size: 1rem;
+  }
+  .para-secondary {
+    font-size: 1rem;
+  }
+  .para-tertiary {
+    font-size: 1rem;
+  }
+  #skill-items li a {
+    font-size: 1rem;
+  }
+  .skill-title {
+    font-size: 1.8rem;
+  }
+  .contact-cards {
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   }
 }
-/* For width 680px */
-@media (max-width: 680px) {
+
+/* From width 530px */
+@media (max-width: 530px) {
+  .aboutImgBox {
+    width: 18rem;
+    border-radius: 50%;
+    height: 18rem;
+  }
+  .title-info {
+    font-size: 3rem;
+  }
+  .aboutSpanBox {
+    font-size: 1rem;
+  }
+  .AboutBox {
+    width: 100%;
+  }
+  #skillbar {
+    display: none;
+  }
+}
+
+/* From width 400px */
+@media (max-width: 470px) {
+  .typeWriteTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .aboutInfoBox{
+    margin: auto;
+  }
+  .span-label{
+    width: 32%;
+  }
+  .label-items, .val-items{
+    white-space: inherit;
+    line-height: 2.6rem;
+  }
 }
