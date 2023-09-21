@@ -533,7 +533,7 @@ html {
 }
 
 /* Responsive */
-@media (min-width: 1451px) {
+@media (min-width: 1501px) {
   .projbox {
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   }
@@ -542,7 +542,7 @@ html {
   }
 }
 /* From width 1450px */
-@media (max-width: 1450px) {
+@media (max-width: 1500px) {
   .aboutImgBox {
     width: 25rem;
     height: 32.6rem;
