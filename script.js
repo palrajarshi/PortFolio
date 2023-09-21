@@ -121,8 +121,8 @@ const callbackIntersect = (entries, observer) => {
         console.log("Observing Projects");
         projbox.style.opacity = 1;
         projitems.forEach((element, index) => {
-          const delay = index * 60;
-          addEffectWithDelay(element, "animateItems", delay);
+          const delay = index * 70;
+          addEffectWithDelay(element, "animateYitems", delay);
         });
       } else {
         console.log("Inside else");
