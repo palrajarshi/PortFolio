@@ -98,8 +98,7 @@ const callbackIntersect = (entries, observer) => {
       if (targetElement.id === "About") {
         aboutImageBox.style.opacity = 1;
         aboutBox.classList.add("animateItems");
-
-        navbar.style.background = "rgb(12 78 80 / 84%)";
+        navbar.style.background = "rgb(39 38 60 / 93%)";
         setTimeout(() => {
           aboutInfoBox.classList.add("animateItems");
           aboutInfoBox.style.opacity = 1;
@@ -129,7 +128,7 @@ const callbackIntersect = (entries, observer) => {
         });
       } else {
         console.log("Inside else");
-        navbar.style.background = "rgb(66 87 107 / 67%)";
+        navbar.style.background = "rgb(5 11 17 / 88%)";
       }
     }
   });
@@ -244,15 +243,16 @@ const preloadImages = () => {
 
 // 10. Change Theme
 const obj1 = {
-  color: ["#4B0082", "#000080", "#0c0c0d", "#D2691E", "blue"],
+  color: ["#4b7e38", "#4B0082", "#000080", "#0c0c0d", "#D2691E", "#2d2d64"],
   bg: [
+    "linear-gradient(135deg, #FFFF99, #99ffb9)",
     "linear-gradient(135deg, #E6E6FA, #D8BFD8)",
     "linear-gradient(135deg, #E0FFFF, #87CEEB)",
     "linear-gradient(135deg, #F0F8FF, #C0C0C0)",
     "linear-gradient(135deg, #FFFFF0, #F5DEB3)",
     "white",
   ],
-  iconBg: ["#4B0082", "#000080", "#0c0c0d", "#D2691E", "blue"],
+  iconBg: ["#4b7e38", "#4B0082", "#000080", "#0c0c0d", "#D2691E", "#2d2d64"],
 };
 let theme = 0;
 

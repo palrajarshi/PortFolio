@@ -23,7 +23,7 @@ html {
 
 /* 3.Section - Navbar */
 #navbar {
-  background: rgb(66 87 107 / 67%);
+  background: rgb(5 11 17 / 88%);
   z-index: 1;
   position: fixed;
   right: 0;
@@ -46,6 +46,7 @@ html {
   right: 1%;
   cursor: pointer;
   z-index: 10;
+  box-shadow: 2px 2px 1rem rgba(0, 0,0, 0.3);
 }
 .btn-cancel {
   font-size: 2rem;
@@ -61,7 +62,7 @@ html {
 
 /* 3.2 Navbar ul(nav- items) */
 .nav-title {
-  color: #2de7c7;
+  color: rgb(195 48 93);
   margin: 1rem;
   font-family: "Kanit", sans-serif;
 }
@@ -113,7 +114,7 @@ html {
 }
 .list-items a:hover,
 .list-items:nth-child(6):hover {
-  color: #2ac3ec;
+  color: rgb(195 48 93);
   transform: rotateY(360deg);
 }
 
@@ -545,18 +546,19 @@ html {
   font-size: 2rem;
   position: fixed;
   z-index: 100;
-  top: 0.9rem;
+  top: 0.87rem;
   right: 4.4rem;
   cursor: pointer;
+  box-shadow: 2px 2px 1rem rgba(0, 0,0, 0.3);
 }
 .changeThemeColor {
-  color: var(--variable-color, blue);
+  color: var(--variable-color, #2d2d64);
 }
 .changeThemeBg {
-  background: var(--variable-bg);
+  background: var(--variable-bg, white);
 }
 .changeIconBg {
-  background: var(--variable-iconBg, blue);
+  background: var(--variable-iconBg, #2d2d64);
 }
 
 /* Responsive */
