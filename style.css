@@ -11,9 +11,14 @@
 html {
   scroll-behavior: smooth;
 }
-/* body {
-  height: 250rem;
-} */
+#preloader{
+  background: #000 url(images/b6e0b072897469.5bf6e79950d23.gif) no-repeat center center;
+  background-size: 25%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
 
 /* 3.Section - Navbar */
 #navbar {

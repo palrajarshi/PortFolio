@@ -226,8 +226,13 @@ projbox.addEventListener("mouseout", (e) => {
   targetEl.style.opacity = 0;
   targetEl.classList.remove("bgBlue");
 });
+// 9. Preload
+const preloader = document.getElementById("preloader")
+window.addEventListener('load', ()=>{
+  preloader.style.display = "none";
+})
 
-// 9. Onload Event Listeners
+// 10. Onload Event Listeners
 window.addEventListener("DOMContentLoaded", () => {
   typeWriter();
   intervalID = setInterval(bgChanger, 3000);
