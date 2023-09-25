@@ -600,6 +600,9 @@ html {
   .typeWriteTitle {
     font-size: 2.5rem;
   }
+  .aboutSpanBox {
+    justify-content: flex-start;
+  }
   .para {
     white-space: inherit;
     font-size: 1.1rem;
@@ -694,6 +697,9 @@ html {
   }
   .para {
     font-size: 0.8rem;
+  }
+  .aboutSpanBox {
+    white-space: nowrap;
   }
   html,
   body {
