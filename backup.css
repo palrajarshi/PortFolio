@@ -11,9 +11,15 @@
 html {
   scroll-behavior: smooth;
 }
-/* body {
-  height: 250rem;
-} */
+#preloader {
+  background: #000 url(images/b6e0b072897469.5bf6e79950d23.gif) no-repeat center
+    center;
+  background-size: 25%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
 
 /* 3.Section - Navbar */
 #navbar {
@@ -39,6 +45,7 @@ html {
   top: 2%;
   right: 1%;
   cursor: pointer;
+  z-index: 10;
 }
 .btn-cancel {
   font-size: 2rem;
@@ -120,8 +127,8 @@ html {
 .logo {
   font-family: "Poppins", sans-serif;
   position: absolute;
-  top: 1%;
-  left: 1%;
+  top: 2%;
+  left: 2%;
   font-size: 1.5rem;
   font-weight: bold;
   color: #2d2d64;
@@ -220,66 +227,32 @@ html {
 }
 /* 4.2 Section - Spanbox (label and val) Box  */
 .aboutSpanBox {
-  display: grid;
-  grid-template-areas:
-    "label1 val1"
-    "label2 val2"
-    "label3 val3"
-    "label4 val4"
-    "label5 val5"
-    "label6 val6";
+  display: flex;
+  font-size: 1.1rem;
+  height: 55%;
+  margin-bottom: 1rem;
 }
-
-.label1 {
-  grid-area: label1;
-}
-.label2 {
-  grid-area: label2;
-}
-.label3 {
-  grid-area: label3;
-}
-.label4 {
-  grid-area: label4;
-}
-.label5 {
-  grid-area: label5;
-}
-.label6 {
-  grid-area: label6;
-}
-.val1 {
-  grid-area: val1;
-}
-.val2 {
-  grid-area: val2;
-}
-.val3 {
-  grid-area: val3;
-}
-.val4 {
-  grid-area: val4;
-}
-.val5 {
-  grid-area: val5;
-}
-.val6 {
-  grid-area: val6;
-}
-.label-items{
-  white-space: nowrap;
-  font-size: 1.25rem;
-  line-height: 3.1rem;
+.span-label {
+  display: flex;
+  flex-direction: column;
   color: #2e2c2c;
   margin-right: 1rem;
   font-weight: bold;
 }
-.val-items{
-  white-space: nowrap;
-  font-size: 1.25rem;
-  line-height: 3.1rem;
+.span-value {
+  display: flex;
+  flex-direction: column;
   color: #948d8d;
 }
+
+.label-items,
+.val-items {
+  line-height: 3rem;
+  white-space: nowrap;
+}
+/* .label-items{
+  white-space: nowrap;
+} */
 /* 4.3 Section - Button Box  */
 .aboutBtnBox {
   display: flex;
@@ -290,7 +263,7 @@ html {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
-  margin-left: 0.8rem;
+  margin-left: 0.3rem;
   background-color: #3e64ff;
   border: #5871d6c5;
   padding: 0.6rem;
@@ -302,7 +275,7 @@ html {
 }
 .about-gitIcon {
   cursor: pointer;
-  /* margin-left: 0.3rem; */
+  margin-left: 0.3rem;
   font-size: 2.5rem;
 }
 
@@ -322,6 +295,7 @@ html {
 
 /* 5.1 Skill Navbar */
 #skillbar {
+  opacity: 0;
   position: sticky;
   left: 0;
   top: 30%;
@@ -455,17 +429,19 @@ html {
   transition: 0.6s ease;
 }
 .projbox {
+  opacity: 0;
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
   grid-template-rows: repeat(2, 1fr);
+  transition: 1s ease;
 }
 .proj-items {
   position: relative;
 }
 .proj-items img {
   border: 2px solid white;
-  object-fit: cover;
+  object-fit: fill;
   height: 100%;
   width: 100%;
 }
@@ -491,7 +467,7 @@ html {
   color: white;
 }
 .bgBlue {
-  background: #1b1af2bd;
+  background: #2727ee89;
   transition: 0.3s ease;
 }
 .link-icon {
@@ -561,13 +537,194 @@ html {
   padding: 0.2rem;
   margin-top: 1rem;
 }
+/* 7. Change Themes */
+#colors {
+  width: 3rem;
+  text-align: center;
+  border-radius: 0.6rem;
+  font-size: 2rem;
+  background: #6178af9e;
+  color: white;
+  position: absolute;
+  top: 2%;
+  left: 11%;
+  cursor: pointer;
+}
+.changeThemeColor {
+  color: var(--variable-color, blue);
+}
+.changeThemeBg {
+  background: var(--variable-bg);
+}
+.changeIconBg {
+  background: var(--variable-iconBg, blue);
+}
 
 /* Responsive */
-
-/* For width 1450px */
-@media (max-width: 1450px) {
+@media (min-width: 1501px) {
+  .projbox {
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
+  .contact-cards {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+}
+/* From width 1450px */
+@media (max-width: 1500px) {
   .aboutImgBox {
     width: 25rem;
     height: 32.6rem;
+  }
+  .contact-cards {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+}
+
+/* From width 900px */
+@media (max-width: 900px) {
+  #skillbar {
+    margin-left: 1rem;
+  }
+  .aboutImgBox {
+    width: 34rem;
+    margin: auto;
+  }
+  .projbox {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+  .title-info {
+    display: block;
+    text-align: center;
+  }
+  .aboutInfoBox {
+    margin-top: 2rem;
+    width: 90%;
+  }
+  .aboutSpanBox {
+    justify-content: center;
+  }
+  .AboutBox {
+    flex-direction: column;
+  }
+  .skillsbox {
+    margin-left: 3rem;
+    width: 100%;
+  }
+  /* .skillsbox {
+    
+  } */
+}
+/* From width 680px */
+@media (max-width: 680px) {
+  .skill-para {
+    width: 100%;
+  }
+  .typeWriteTitle {
+    font-size: 2.5rem;
+  }
+  .aboutSpanBox {
+    justify-content: flex-start;
+  }
+  .para {
+    white-space: inherit;
+    font-size: 1.1rem;
+  }
+  .aboutImgBox {
+    width: 28rem;
+  }
+  .para-primary {
+    font-size: 1rem;
+  }
+  .para-duration {
+    font-size: 1rem;
+  }
+  .para-secondary {
+    font-size: 1rem;
+  }
+  .para-tertiary {
+    font-size: 1rem;
+  }
+  #skill-items li a {
+    font-size: 1rem;
+  }
+  .skill-title {
+    font-size: 1.8rem;
+  }
+  .contact-cards {
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  }
+}
+
+/* From width 530px */
+@media (max-width: 530px) {
+  .aboutImgBox {
+    width: 18rem;
+    border-radius: 50%;
+    height: 18rem;
+  }
+  .title-info {
+    font-size: 3rem;
+  }
+  .aboutSpanBox {
+    font-size: 1rem;
+  }
+  .AboutBox {
+    width: 100%;
+  }
+  #skillbar {
+    display: none;
+  }
+  .skillsbox {
+    margin-left: 2rem;
+  }
+}
+
+/* From width 400px */
+@media (max-width: 470px) {
+  .typeWriteTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .aboutInfoBox {
+    margin: auto;
+  }
+  .span-label {
+    width: 32%;
+  }
+  .label-items,
+  .val-items {
+    white-space: inherit;
+    line-height: 2.6rem;
+  }
+}
+/* From width 395px */
+@media (max-width: 395px) {
+  #navbar {
+    width: 90vw;
+  }
+  .aboutSpanBox {
+    font-size: 0.81rem;
+  }
+  .para {
+    font-size: 0.9rem;
+  }
+  .typeWriteTitle {
+    font-size: 1.8rem;
+  }
+}
+/* From width 350px */
+@media (max-width: 350px) {
+  #navbar {
+    width: 100vw;
+  }
+  .para {
+    font-size: 0.8rem;
+  }
+  .aboutSpanBox {
+    white-space: nowrap;
+  }
+  html,
+  body {
+    overflow: auto;
   }
 }

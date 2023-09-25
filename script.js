@@ -239,7 +239,39 @@ const preloadImages = () => {
   }
 };
 
-// 10. Onload Event Listeners
+// 10. Change Theme
+colorbtn = document.getElementById("colors");
+const obj1 = {
+  color: ["#4B0082", "#000080", "#0c0c0d", "#D2691E", "blue"],
+  bg: [
+    "linear-gradient(135deg, #E6E6FA, #D8BFD8)",
+    "linear-gradient(135deg, #E0FFFF, #87CEEB)",
+    "linear-gradient(135deg, #F0F8FF, #C0C0C0)",
+    "linear-gradient(135deg, #FFFFF0, #F5DEB3)",
+    "white",
+  ],
+  iconBg: ["#4B0082", "#000080", "#0c0c0d", "#D2691E", "blue"],
+};
+let theme = 0;
+
+colorbtn.addEventListener("click", () => {
+  console.log("Click!");
+  document.documentElement.style.setProperty(
+    "--variable-color",
+    `${obj1.color[theme]}`
+  );
+  document.documentElement.style.setProperty(
+    "--variable-bg",
+    `${obj1.bg[theme]}`
+  );
+  document.documentElement.style.setProperty(
+    "--variable-iconBg",
+    `${obj1.iconBg[theme]}`
+  );
+  theme = (theme + 1) % obj1.color.length;
+});
+
+// 11. Onload Event Listeners
 window.addEventListener("DOMContentLoaded", () => {
   typeWriter();
   intervalID = setInterval(bgChanger, 3000);
