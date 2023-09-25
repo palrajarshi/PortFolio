@@ -15,6 +15,7 @@ const edubox = document.getElementById("edubox");
 const expbox = document.getElementById("expbox");
 const langbox = document.getElementById("langbox");
 const projbox = document.querySelector(".projbox");
+colorbtn = document.getElementById("colors");
 let intervalID;
 
 // 2. Menubar logic
@@ -22,6 +23,7 @@ menubar.addEventListener("click", () => {
   navbar.style.transform = "translateX(0)";
   navitems.classList.add("animateItems");
   menubar.style.visibility = "hidden";
+  colorbtn.style.display = "none";
 });
 
 // 3. Cancel btn (inside Navbar)
@@ -30,6 +32,7 @@ cancelbtn.addEventListener("click", () => {
   navitems.classList.remove("animateItems");
   setTimeout(() => {
     menubar.style.visibility = "visible";
+    colorbtn.style.display = "block";
   }, 505);
 });
 
@@ -240,7 +243,6 @@ const preloadImages = () => {
 };
 
 // 10. Change Theme
-colorbtn = document.getElementById("colors");
 const obj1 = {
   color: ["#4B0082", "#000080", "#0c0c0d", "#D2691E", "blue"],
   bg: [
@@ -269,7 +271,7 @@ colorbtn.addEventListener("click", () => {
     `${obj1.iconBg[theme]}`
   );
   theme = (theme + 1) % obj1.color.length;
-  console.log(theme)
+  console.log(theme);
 });
 
 // 11. Onload Event Listeners
