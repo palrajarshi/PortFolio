@@ -11,8 +11,9 @@
 html {
   scroll-behavior: smooth;
 }
-#preloader{
-  background: #000 url(images/b6e0b072897469.5bf6e79950d23.gif) no-repeat center center;
+#preloader {
+  background: #000 url(images/b6e0b072897469.5bf6e79950d23.gif) no-repeat center
+    center;
   background-size: 25%;
   height: 100vh;
   width: 100%;
@@ -440,7 +441,7 @@ html {
 }
 .proj-items img {
   border: 2px solid white;
-  object-fit: cover;
+  object-fit: fill;
   height: 100%;
   width: 100%;
 }

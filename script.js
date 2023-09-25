@@ -227,15 +227,23 @@ projbox.addEventListener("mouseout", (e) => {
   targetEl.classList.remove("bgBlue");
 });
 // 9. Preload
-const preloader = document.getElementById("preloader")
-window.addEventListener('load', ()=>{
+const preloader = document.getElementById("preloader");
+window.addEventListener("load", () => {
   preloader.style.display = "none";
-})
+});
+// 9.1 Preload Images
+const preloadImages = () => {
+  for (let i = 0; i < arr.length; i++) {
+    const img = new Image();
+    img.src = arr[i];
+  }
+};
 
 // 10. Onload Event Listeners
 window.addEventListener("DOMContentLoaded", () => {
   typeWriter();
   intervalID = setInterval(bgChanger, 3000);
+  preloadImages();
   setTimeout(() => {
     clearInterval(intervalID);
   }, timer);
