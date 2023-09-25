@@ -269,6 +269,7 @@ colorbtn.addEventListener("click", () => {
     `${obj1.iconBg[theme]}`
   );
   theme = (theme + 1) % obj1.color.length;
+  console.log(theme)
 });
 
 // 11. Onload Event Listeners
